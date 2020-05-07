@@ -1,4 +1,3 @@
-/* nejsme vcerejsi, pouzivame moderni box model */
 html {
   box-sizing: border-box;
 }
@@ -13,13 +12,12 @@ body {
   font-size: 14px;
 }
 
-/* ---------------------------------------------------- */
 h1 {
   text-align: center;
 }
 
-.tym {
-  display: flex;
+.osobaKontejner {
+  width: 100%;
 }
 
 .osoba {
@@ -30,40 +28,63 @@ h1 {
   padding: 15px;
 }
 
+/* .tym {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+} */
+
 .foto img {
   border-radius: 50%;
 }
 
-@media (max-width: 960px) {
-  .osoba {
-    overflow: auto;
-    text-align: left;
-  }
+@media (min-width: 540px) {
   .tym {
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
   }
-  .osobaKontejner {
-    width: 50%;
+
+  .osoba {
+    display: flex;
+    text-align: left;
   }
-  .foto img {
-    float: left;
-    margin: 20px 20px;
+
+  .foto {
+    margin-right: 20px;
+  }
+
+  .popis {
+    margin-top: 15px;
+  }
+
+  .osobaKontejner {
+    display: flex;
+    width: 50%;
   }
 }
 
-@media (max-width: 540px) {
-  .tym {
-    flex-wrap: wrap;
-  }
-
-  .osobaKontejner {
-    width: 100%;
-  }
-
-  .foto img {
-    float: none;
-  }
+@media (min-width: 960px) {
   .osoba {
+    flex-direction: column;
+  }
+
+  .popis {
     text-align: center;
+  }
+
+  .foto {
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: -15px;
+  }
+  .tym {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-wrap: nowrap;
+  }
+  .osobaKontejner {
+    width: auto;
   }
 }
